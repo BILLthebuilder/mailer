@@ -1,26 +1,74 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class Contact extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: '',
+      message: '',
+      email: '',
+      sent: false,
+      error: null,
+      buttonText: 'Send Message'
+    }
+  }
+  render() {
+    return (
+      <div className="App">
+        <p>Welcome to mailer, Contact me here</p>
+        <div>
+          <form onSubmit={(e) => this.formSubmit(e)}>
+
+            <label htmlFor="Your name">Your name</label>
+            <input onChange={e => this.setState({ name: e.target.value })} name="Your name" id="fname" type="text" placeholder="Your Name" value={this.state.name} />
+
+            <label htmlFor="email">Email</label>
+            <input onChange={(e) => this.setState({ email: e.target.value })} name="email" id="email" type="email" placeholder="your@email.com" required value={this.state.email} />
+
+            <label htmlFor="message">Message</label>
+            <textarea onChange={e => this.setState({ message: e.target.value })} name="message" id="message" type="text" placeholder="Please write your message here" value={this.state.message} required />
+
+            <button type="submit">{this.state.buttonText}</button>
+            <div className="notification">
+              <div>{this.state.sent} </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    );
+  }
+  formSubmit = (e) => {
+    e.preventDefault()
+
+    this.setState({
+      buttonText: '...sending'
+    })
+
+    const data = {
+      name: this.state.name,
+      email: this.state.email,
+      message: this.state.message
+    }
+
+    axios.post('http://localhost:8000/email', data)
+      .then(res => {
+        this.setState({ sent: res.data.message }, this.resetForm());
+      })
+      .catch((error) => {
+        this.setState({ sent: 'Sorry, this is our fault please try again later', buttonText: 'Not sent' });// , error: error.response.data.error });
+      })
+  }
+  resetForm = () => {
+    this.setState({
+      name: '',
+      message: '',
+      email: '',
+      buttonText: 'Sent'
+    })
+  }
 }
 
-export default App;
+export default Contact;
