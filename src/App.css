@@ -1,33 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: #f6f7f8;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin: 0 auto;
+  padding: 10px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+  font-family: Helvetica, Arial, sans-serif;
+}
+p {
+  text-align: center;
+  font-weight: 500;
+}
+
+.notification {
+  padding-top: 10px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  color: #f13a59;
 }
 
-.App-link {
-  color: #61dafb;
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  padding: 0 20px;
+  height: 50px;
+  background-color: #f2f2f2;
+  border: 1px solid #e6e6e6;
+  border-bottom-width: 3px;
+  border-radius: 5px;
+  outline: 0;
+  transition: all 0.7s ease;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  padding: 0 20px;
+  height: 200px;
+  background-color: #f2f2f2;
+  border: 1px solid #e6e6e6;
+  border-bottom-width: 3px;
+  border-radius: 5px;
+  outline: 0;
+  transition: all 0.7s ease;
+}
+button {
+  padding: 0 20px;
+  text-align: center;
+  line-height: 30px;
+  background-color: #f13a59;
+  color: #f2f2f2;
+  cursor: pointer;
+  border: 1px solid #f13a59;
+  border-radius: 5px;
+  outline: 0;
+  height: 30px;
+  font-size: 14pt;
+}
+button:hover {
+  opacity: 0.9;
+  background-color: #45a049;
+}
+button:active {
+  transform: translateY(4px);
+}
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+@media only screen and (max-width: 425px) {
+  button,
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"] {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (min-width: 320px) {
+  .welcomereg {
+    font-size: 10pt;
   }
 }
