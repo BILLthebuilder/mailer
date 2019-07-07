@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/BILLthebuilder/mailer/static/css/main.78a9e465.chunk.css",
+    "main.js": "/BILLthebuilder/mailer/static/js/main.e863e23c.chunk.js",
+    "main.js.map": "/BILLthebuilder/mailer/static/js/main.e863e23c.chunk.js.map",
+    "runtime~main.js": "/BILLthebuilder/mailer/static/js/runtime~main.9590a3e1.js",
+    "runtime~main.js.map": "/BILLthebuilder/mailer/static/js/runtime~main.9590a3e1.js.map",
+    "static/js/2.8b429a8f.chunk.js": "/BILLthebuilder/mailer/static/js/2.8b429a8f.chunk.js",
+    "static/js/2.8b429a8f.chunk.js.map": "/BILLthebuilder/mailer/static/js/2.8b429a8f.chunk.js.map",
+    "index.html": "/BILLthebuilder/mailer/index.html",
+    "precache-manifest.9a74a718f531941a766c6c22d3176837.js": "/BILLthebuilder/mailer/precache-manifest.9a74a718f531941a766c6c22d3176837.js",
+    "service-worker.js": "/BILLthebuilder/mailer/service-worker.js",
+    "static/css/main.78a9e465.chunk.css.map": "/BILLthebuilder/mailer/static/css/main.78a9e465.chunk.css.map"
+  }
+}
