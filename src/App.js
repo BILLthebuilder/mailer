@@ -31,9 +31,8 @@ class Contact extends Component {
             <textarea onChange={e => this.setState({ message: e.target.value })} name="message" id="message" type="text" placeholder="Please write your message here" value={this.state.message} required />
 
             <button type="submit">{this.state.buttonText}</button>
-            <div className="notification">
-              <div>{this.state.sent} </div>
-            </div>
+
+            <div className="notification">{this.state.sent} </div>
           </form>
         </div>
       </div>
@@ -53,12 +52,13 @@ class Contact extends Component {
       message: this.state.message
     }
 
-    axios.post('http://localhost:8000/email', data)
+    axios.post('https://mailer-api2.herokuapp.com/email', data)
       .then(res => {
         this.setState({ sent: res.data.message }, this.resetForm());
       })
-      .catch((error) => {
-        this.setState({ sent: 'Sorry, this is our fault please try again later', buttonText: 'Not sent' });// , error: error.response.data.error });
+      .catch((error, noerror) => {
+        // this.setState({ sent: 'Sorry, this is our fault please try again later', buttonText: 'Not sent' });
+        this.setState({ sent: error.response.data.error, buttonText: 'Not sent' })
       })
   }
   resetForm = () => {
