@@ -51,8 +51,9 @@ class Contact extends Component {
       email: this.state.email,
       message: this.state.message
     }
-
+    
     axios.post('https://mailer-api2.herokuapp.com/email', data)
+    // change the url to point to your own mailing service
       .then(res => {
         this.setState({ sent: res.data.message }, this.resetForm());
       })
