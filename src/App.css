@@ -24,6 +24,8 @@ p {
   justify-content: center;
   align-items: center;
   color: #f13a59;
+  font-weight: bolder;
+  font-size: 25px;
 }
 
 input[type="text"],
