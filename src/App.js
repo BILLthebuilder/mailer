@@ -18,7 +18,6 @@ class Contact extends Component {
   render() {
     return (
       <div className="App">
-        <p>Welcome to mailer, Contact me here</p>
         <div>
           <form onSubmit={(e) => this.formSubmit(e)}>
 
