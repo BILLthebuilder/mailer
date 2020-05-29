@@ -23,7 +23,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #f13a59;
+  color: white;
   font-weight: bolder;
   font-size: 25px;
 }
@@ -40,6 +40,7 @@ textarea {
   height: 50px;
   border: 2px solid #e6e6e6;
   background: white;
+  color: black;
   border-bottom-width: 3px;
   border-radius: 5px;
   outline: 0;
