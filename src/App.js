@@ -72,7 +72,7 @@ class Contact extends Component {
       message: '',
       subject:'',
       email: '',
-      buttonText: 'Sent'
+      buttonText: 'Send Again'
     })
   }
 }
