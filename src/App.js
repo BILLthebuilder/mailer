@@ -56,7 +56,7 @@ class Contact extends Component {
       message: this.state.message
     }
     
-    axios.post('https://mailer-api2.herokuapp.com/email', data)
+    axios.post('https://us-central1-vcoins-mail.cloudfunctions.net/vcoinsMail/email', data)
     // change the url to point to your own mailing service
       .then(res => {
         this.setState({ sent: res.data.message }, this.resetForm());
