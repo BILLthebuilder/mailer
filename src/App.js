@@ -8,6 +8,7 @@ class Contact extends Component {
     this.state = {
       name: '',
       message: '',
+      subject:'',
       email: '',
       sent: false,
       error: null,
@@ -22,10 +23,13 @@ class Contact extends Component {
           <form onSubmit={(e) => this.formSubmit(e)}>
 
             <label htmlFor="Your name">Your name</label>
-            <input onChange={e => this.setState({ name: e.target.value })} name="Your name" id="fname" type="text" placeholder="Your Name" value={this.state.name} />
+            <input onChange={e => this.setState({ name: e.target.value })} name="Your name" id="fname" type="text" placeholder="Your Name" value={this.state.name} required/>
 
             <label htmlFor="email">Email</label>
-            <input onChange={(e) => this.setState({ email: e.target.value })} name="email" id="email" type="email" placeholder="your@email.com" required value={this.state.email} />
+            <input onChange={(e) => this.setState({ email: e.target.value })} name="email" id="email" type="email" placeholder="your@email.com" value={this.state.email} required/>
+
+             <label htmlFor="subject">Subject</label>
+            <input onChange={e => this.setState({ subject: e.target.value })} name="subject" id="subject" type="text" placeholder="Enter subject" value={this.state.subject} required/>
 
             <label htmlFor="message">Message</label>
             <textarea onChange={e => this.setState({ message: e.target.value })} name="message" id="message" type="text" placeholder="Please write your message here" value={this.state.message} required />
@@ -48,6 +52,7 @@ class Contact extends Component {
 
     const data = {
       name: this.state.name,
+      subject:this.state.subject,
       email: this.state.email,
       message: this.state.message
     }
@@ -66,6 +71,7 @@ class Contact extends Component {
     this.setState({
       name: '',
       message: '',
+      subject:'',
       email: '',
       buttonText: 'Sent'
     })
