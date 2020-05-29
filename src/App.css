@@ -6,6 +6,10 @@
   color: white;
 }
 
+body{
+  border: 5px solid green;
+  border-radius: 7px;
+}
 .App {
   margin: 0 auto;
   padding: 10px;
