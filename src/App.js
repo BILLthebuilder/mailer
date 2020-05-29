@@ -63,7 +63,7 @@ class Contact extends Component {
       })
       .catch((error, noerror) => {
         // this.setState({ sent: 'Sorry, this is our fault please try again later', buttonText: 'Not sent' });
-        this.setState({ sent: error.response.data.error, buttonText: 'Not sent' })
+        this.setState({ sent: error, buttonText: 'Not sent' })
       })
   }
   resetForm = () => {
