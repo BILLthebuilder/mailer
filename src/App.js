@@ -34,6 +34,10 @@ class Contact extends Component {
             <textarea onChange={e => this.setState({ message: e.target.value })} name="message" id="message" type="text" placeholder="Please write your message here" value={this.state.message} required />
 
             <button type="submit">{this.state.buttonText}</button>
+            <div className="phone-email">
+              <p className="phone">+254723152808</p>
+              <p className="email">info@valuableantiquecollections.com</p>
+            </div>
 
             <div className="notification">{this.state.sent} </div>
           </form>

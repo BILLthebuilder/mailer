@@ -27,7 +27,9 @@ p {
   font-weight: bolder;
   font-size: 25px;
 }
-
+.phone-email{
+  font-weight: bolder;
+}
 input[type="text"],
 input[type="email"],
 textarea {
