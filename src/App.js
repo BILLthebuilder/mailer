@@ -35,8 +35,8 @@ class Contact extends Component {
 
             <button type="submit">{this.state.buttonText}</button>
             <div className="phone-email">
-              <p className="phone">+254723152808</p>
-              <p className="email">info@valuableantiquecollections.com</p>
+              <h3 className="phone">Phone: +254723152808</h3>
+              <h3 className="email">Email: info@valuableantiquecollections.com</h3>
             </div>
 
             <div className="notification">{this.state.sent} </div>
